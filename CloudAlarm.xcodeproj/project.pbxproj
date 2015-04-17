@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */; };
+		1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */; };
+		1FA8ED2D1AE14D7A0082FF4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED2C1AE14D7A0082FF4C /* ViewController.swift */; };
+		1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */; };
+		1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED311AE14D7A0082FF4C /* Images.xcassets */; };
+		1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */; };
+		1FA8ED411AE14D7A0082FF4C /* CloudAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FA8ED3B1AE14D7A0082FF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA8ED1A1AE14D790082FF4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FA8ED211AE14D790082FF4C;
+			remoteInfo = CloudAlarm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA8ED261AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1FA8ED2A1AE14D7A0082FF4C /* CloudAlarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CloudAlarm.xcdatamodel; sourceTree = "<group>"; };
+		1FA8ED2C1AE14D7A0082FF4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1FA8ED2F1AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1FA8ED311AE14D7A0082FF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1FA8ED341AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1FA8ED3A1AE14D7A0082FF4C /* CloudAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA8ED3F1AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudAlarmTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FA8ED1F1AE14D790082FF4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA8ED371AE14D7A0082FF4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FA8ED191AE14D790082FF4C = {
+			isa = PBXGroup;
+			children = (
+				1FA8ED241AE14D7A0082FF4C /* CloudAlarm */,
+				1FA8ED3D1AE14D7A0082FF4C /* CloudAlarmTests */,
+				1FA8ED231AE14D7A0082FF4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FA8ED231AE14D7A0082FF4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */,
+				1FA8ED3A1AE14D7A0082FF4C /* CloudAlarmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FA8ED241AE14D7A0082FF4C /* CloudAlarm */ = {
+			isa = PBXGroup;
+			children = (
+				1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */,
+				1FA8ED2C1AE14D7A0082FF4C /* ViewController.swift */,
+				1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */,
+				1FA8ED311AE14D7A0082FF4C /* Images.xcassets */,
+				1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */,
+				1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */,
+				1FA8ED251AE14D7A0082FF4C /* Supporting Files */,
+			);
+			path = CloudAlarm;
+			sourceTree = "<group>";
+		};
+		1FA8ED251AE14D7A0082FF4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FA8ED261AE14D7A0082FF4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FA8ED3D1AE14D7A0082FF4C /* CloudAlarmTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */,
+				1FA8ED3E1AE14D7A0082FF4C /* Supporting Files */,
+			);
+			path = CloudAlarmTests;
+			sourceTree = "<group>";
+		};
+		1FA8ED3E1AE14D7A0082FF4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FA8ED3F1AE14D7A0082FF4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FA8ED211AE14D790082FF4C /* CloudAlarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA8ED441AE14D7A0082FF4C /* Build configuration list for PBXNativeTarget "CloudAlarm" */;
+			buildPhases = (
+				1FA8ED1E1AE14D790082FF4C /* Sources */,
+				1FA8ED1F1AE14D790082FF4C /* Frameworks */,
+				1FA8ED201AE14D790082FF4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudAlarm;
+			productName = CloudAlarm;
+			productReference = 1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FA8ED391AE14D7A0082FF4C /* CloudAlarmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA8ED471AE14D7A0082FF4C /* Build configuration list for PBXNativeTarget "CloudAlarmTests" */;
+			buildPhases = (
+				1FA8ED361AE14D7A0082FF4C /* Sources */,
+				1FA8ED371AE14D7A0082FF4C /* Frameworks */,
+				1FA8ED381AE14D7A0082FF4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FA8ED3C1AE14D7A0082FF4C /* PBXTargetDependency */,
+			);
+			name = CloudAlarmTests;
+			productName = CloudAlarmTests;
+			productReference = 1FA8ED3A1AE14D7A0082FF4C /* CloudAlarmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FA8ED1A1AE14D790082FF4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = cz.fi.muni;
+				TargetAttributes = {
+					1FA8ED211AE14D790082FF4C = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					1FA8ED391AE14D7A0082FF4C = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 1FA8ED211AE14D790082FF4C;
+					};
+				};
+			};
+			buildConfigurationList = 1FA8ED1D1AE14D790082FF4C /* Build configuration list for PBXProject "CloudAlarm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FA8ED191AE14D790082FF4C;
+			productRefGroup = 1FA8ED231AE14D7A0082FF4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FA8ED211AE14D790082FF4C /* CloudAlarm */,
+				1FA8ED391AE14D7A0082FF4C /* CloudAlarmTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FA8ED201AE14D790082FF4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */,
+				1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */,
+				1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA8ED381AE14D7A0082FF4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FA8ED1E1AE14D790082FF4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA8ED2D1AE14D7A0082FF4C /* ViewController.swift in Sources */,
+				1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */,
+				1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA8ED361AE14D7A0082FF4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA8ED411AE14D7A0082FF4C /* CloudAlarmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FA8ED3C1AE14D7A0082FF4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FA8ED211AE14D790082FF4C /* CloudAlarm */;
+			targetProxy = 1FA8ED3B1AE14D7A0082FF4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FA8ED2F1AE14D7A0082FF4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FA8ED341AE14D7A0082FF4C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1FA8ED421AE14D7A0082FF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1FA8ED431AE14D7A0082FF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1FA8ED451AE14D7A0082FF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CloudAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1FA8ED461AE14D7A0082FF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CloudAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1FA8ED481AE14D7A0082FF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CloudAlarmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudAlarm.app/CloudAlarm";
+			};
+			name = Debug;
+		};
+		1FA8ED491AE14D7A0082FF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CloudAlarmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudAlarm.app/CloudAlarm";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FA8ED1D1AE14D790082FF4C /* Build configuration list for PBXProject "CloudAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA8ED421AE14D7A0082FF4C /* Debug */,
+				1FA8ED431AE14D7A0082FF4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FA8ED441AE14D7A0082FF4C /* Build configuration list for PBXNativeTarget "CloudAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA8ED451AE14D7A0082FF4C /* Debug */,
+				1FA8ED461AE14D7A0082FF4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1FA8ED471AE14D7A0082FF4C /* Build configuration list for PBXNativeTarget "CloudAlarmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA8ED481AE14D7A0082FF4C /* Debug */,
+				1FA8ED491AE14D7A0082FF4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1FA8ED2A1AE14D7A0082FF4C /* CloudAlarm.xcdatamodel */,
+			);
+			currentVersion = 1FA8ED2A1AE14D7A0082FF4C /* CloudAlarm.xcdatamodel */;
+			path = CloudAlarm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1FA8ED1A1AE14D790082FF4C /* Project object */;
+}
