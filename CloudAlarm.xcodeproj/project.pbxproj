@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */; };
+		1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */; };
+		1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */; };
 		1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */; };
 		1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */; };
-		1FA8ED2D1AE14D7A0082FF4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED2C1AE14D7A0082FF4C /* ViewController.swift */; };
+		1FA8ED2D1AE14D7A0082FF4C /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED2C1AE14D7A0082FF4C /* AlarmListViewController.swift */; };
 		1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */; };
 		1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED311AE14D7A0082FF4C /* Images.xcassets */; };
 		1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */; };
 		1FA8ED411AE14D7A0082FF4C /* CloudAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */; };
+		1FA8ED4B1AE14EC20082FF4C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */; };
+		1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatViewController.swift; sourceTree = "<group>"; };
+		1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmActionsContainerViewController.swift; sourceTree = "<group>"; };
+		1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA8ED261AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FA8ED2A1AE14D7A0082FF4C /* CloudAlarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CloudAlarm.xcdatamodel; sourceTree = "<group>"; };
-		1FA8ED2C1AE14D7A0082FF4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1FA8ED2C1AE14D7A0082FF4C /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		1FA8ED2F1AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FA8ED311AE14D7A0082FF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FA8ED341AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1FA8ED3A1AE14D7A0082FF4C /* CloudAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA8ED3F1AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudAlarmTests.swift; sourceTree = "<group>"; };
+		1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmAddEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +90,16 @@
 			isa = PBXGroup;
 			children = (
 				1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */,
-				1FA8ED2C1AE14D7A0082FF4C /* ViewController.swift */,
+				1FA8ED2C1AE14D7A0082FF4C /* AlarmListViewController.swift */,
+				1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */,
+				1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */,
+				1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */,
 				1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */,
+				1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */,
 				1FA8ED311AE14D7A0082FF4C /* Images.xcassets */,
 				1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */,
 				1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */,
+				1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */,
 				1FA8ED251AE14D7A0082FF4C /* Supporting Files */,
 			);
 			path = CloudAlarm;
@@ -215,9 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA8ED2D1AE14D7A0082FF4C /* ViewController.swift in Sources */,
+				1FA8ED2D1AE14D7A0082FF4C /* AlarmListViewController.swift in Sources */,
 				1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */,
 				1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */,
+				1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */,
+				1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */,
+				1FA8ED4B1AE14EC20082FF4C /* Alarm.swift in Sources */,
+				1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */,
+				1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +433,7 @@
 				1FA8ED461AE14D7A0082FF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FA8ED471AE14D7A0082FF4C /* Build configuration list for PBXNativeTarget "CloudAlarmTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +442,7 @@
 				1FA8ED491AE14D7A0082FF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
