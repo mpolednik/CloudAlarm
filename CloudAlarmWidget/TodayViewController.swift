@@ -14,6 +14,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+        
+        let sharedDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+        
+        println(sharedDefaults!.valueForKey("fireDates"))
     }
     
     override func didReceiveMemoryWarning() {

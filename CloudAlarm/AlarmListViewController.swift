@@ -50,6 +50,10 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         self.dateFormatter.setLocalizedDateFormatFromTemplate("H:m")
         initNotifications()
+        
+        let sharedDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+        sharedDefaults!.setObject([:], forKey: "fireDates")
+        sharedDefaults!.synchronize()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
