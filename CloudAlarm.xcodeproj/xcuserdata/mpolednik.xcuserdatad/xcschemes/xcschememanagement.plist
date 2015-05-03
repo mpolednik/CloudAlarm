@@ -9,15 +9,30 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CloudAlarmWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1F6998A71AF5AA0E0048D83E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1FA8ED211AE14D790082FF4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>1FA8ED391AE14D7A0082FF4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1FE0FDCD1AF5B280007A756D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

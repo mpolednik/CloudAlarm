@@ -35,12 +35,12 @@ class AlarmRepeatViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       self.item!.repeat.append(indexPath.row)
+        self.item!.repeat.insert(indexPath.row)
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         if let index = find(self.item!.repeat, indexPath.row) {
-            self.item!.repeat.removeAtIndex(index)
+            self.item!.repeat.remove(indexPath.row)
         }
     }
 }

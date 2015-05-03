@@ -15,7 +15,7 @@ class Alarm: NSManagedObject {
     @NSManaged var enabled: Bool
     @NSManaged var target: NSDate
     @NSManaged var label: String
-    @NSManaged var repeat: [Int]
+    @NSManaged var repeat: Set<Int>
 
     func initDefaults() {
         self.enabled = true

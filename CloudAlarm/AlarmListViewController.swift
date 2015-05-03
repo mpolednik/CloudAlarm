@@ -15,6 +15,9 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func unwindFromAddEdit(segue: UIStoryboardSegue) -> Void {
         let source: AlarmAddEditViewController = segue.sourceViewController as! AlarmAddEditViewController
         self.moc.save(nil)
+        if let alarm = source.item {
+            updateNotificationsForAlarm(alarm)
+        }
         self.tableView.reloadData()
     }
     
@@ -45,8 +48,8 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() -> Void {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.dateFormatter.setLocalizedDateFormatFromTemplate("H:m")
+        initNotifications()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -84,8 +87,11 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func alarmStateChanged(cell: AlarmTableViewCell) {
-        (self.controller.objectAtIndexPath(self.tableView.indexPathForCell(cell)!) as! Alarm).enabled = cell.uiSwitch.on
+        let alarm: Alarm = self.controller.objectAtIndexPath(self.tableView.indexPathForCell(cell)!) as! Alarm
+        alarm.enabled = cell.uiSwitch.on
         self.moc.save(nil)
+        
+        updateNotificationsForAlarm(alarm)
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -95,6 +101,7 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             let alarm: Alarm = self.controller.objectAtIndexPath(indexPath) as! Alarm
+            deleteNotificationsForAlarm(alarm)
             self.moc.deleteObject(alarm)
             self.moc.save(nil)
         }
@@ -103,16 +110,23 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
         case .Insert:
-            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Top)
         case .Update:
-            let cell = self.tableView.cellForRowAtIndexPath(indexPath!) as! AlarmTableViewCell
-            let alarm: Alarm = self.controller.objectAtIndexPath(indexPath!) as! Alarm
-            cell.setValues(alarm, delegate: self, dateFormatter: self.dateFormatter)
+            if let indexPath = indexPath {
+                if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? AlarmTableViewCell, alarm: Alarm = self.controller.objectAtIndexPath(indexPath) as? Alarm {
+
+                    cell.setValues(alarm, delegate: self, dateFormatter: self.dateFormatter)
+                }
+            }
         case .Move:
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+            var rowAnimations = [UITableViewRowAnimation.Bottom, UITableViewRowAnimation.Top]
+            if indexPath!.row > newIndexPath!.row {
+                rowAnimations = rowAnimations.reverse()
+            }
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: rowAnimations[0])
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: rowAnimations[1])
         case .Delete:
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Left)
         default:
             return
         }
