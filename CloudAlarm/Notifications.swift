@@ -59,7 +59,7 @@ func createSnoozeForNotification(notification: UILocalNotification) {
     reminder.alertTitle = notification.alertBody
     reminder.alertBody = "TEST"
     reminder.userInfo = ["uuid": notification.userInfo!["uuid"]!]
-    reminder.soundName = UILocalNotificationDefaultSoundName
+    reminder.soundName = "alarm.caf"
     
     UIApplication.sharedApplication().scheduleLocalNotification(reminder)
     return
@@ -90,9 +90,9 @@ func createNotificationsForAlarm(alarm: Alarm) {
         notification.fireDate = target
         notification.category = "ALARM_FIRED"
         notification.alertTitle = alarm.label
-        notification.alertBody = "TEST"
+        notification.alertBody = "Good morning!"
         notification.userInfo = ["uuid": alarm.uuid]
-        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.soundName = "alarm.caf"
         if alarm.repeat.count == 7 {
             notification.repeatInterval = NSCalendarUnit.CalendarUnitDay
         }
@@ -120,7 +120,7 @@ func createNotificationsForAlarm(alarm: Alarm) {
         notification.alertBody = "TEST"
         notification.userInfo = ["uuid": alarm.uuid]
         notification.repeatInterval = NSCalendarUnit.CalendarUnitWeekday
-        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.soundName = "alarm.caf"
         
         addAlarmTargetToSharedDefaults(alarm)
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
