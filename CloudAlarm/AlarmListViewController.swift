@@ -48,6 +48,9 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() -> Void {
         super.viewDidLoad()
+        
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.tableFooterView?.hidden = true
         self.dateFormatter.setLocalizedDateFormatFromTemplate("H:m")
         initNotifications()
         

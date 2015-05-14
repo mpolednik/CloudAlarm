@@ -22,6 +22,7 @@ class AlarmAddEditViewController: UIViewController {
             self.label.text = alarm.label
             self.timepicker.date = alarm.target
         }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

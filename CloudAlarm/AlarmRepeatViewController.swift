@@ -16,6 +16,9 @@ class AlarmRepeatViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.tableFooterView?.hidden = true
+        
         if let alarm = self.item {
             for day in alarm.repeat {
                 self.tableView.selectRowAtIndexPath(NSIndexPath(forRow: day, inSection: 0), animated: false, scrollPosition: .None)
