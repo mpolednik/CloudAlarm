@@ -62,11 +62,6 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
             }
         }
         self.moc.save(nil)
-        
-        
-        let sharedDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
-        sharedDefaults!.setObject([:], forKey: "fireDates")
-        sharedDefaults!.synchronize()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

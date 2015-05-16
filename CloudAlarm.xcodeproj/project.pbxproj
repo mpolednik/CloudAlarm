@@ -19,6 +19,7 @@
 		1FA8ED411AE14D7A0082FF4C /* CloudAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */; };
 		1FA8ED4B1AE14EC20082FF4C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */; };
 		1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */; };
+		1FC99E931B07B2C6005AFA6F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */; };
 		1FE0FDCF1AF5B280007A756D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6998AA1AF5AA0E0048D83E /* NotificationCenter.framework */; };
 		1FE0FDD41AF5B280007A756D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0FDD31AF5B280007A756D /* TodayViewController.swift */; };
 		1FE0FDD61AF5B280007A756D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE0FDD51AF5B280007A756D /* MainInterface.storyboard */; };
@@ -75,6 +76,7 @@
 		1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudAlarmTests.swift; sourceTree = "<group>"; };
 		1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmAddEditViewController.swift; sourceTree = "<group>"; };
+		1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		1FE0FDCE1AF5B280007A756D /* CloudAlarmWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CloudAlarmWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE0FDD21AF5B280007A756D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE0FDD31AF5B280007A756D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */,
 				1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */,
 				1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */,
+				1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */,
 				1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */,
 				1FA8ED311AE14D7A0082FF4C /* Images.xcassets */,
 				1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */,
@@ -352,6 +355,7 @@
 				1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */,
 				1FF9A0A41AF53B490029013A /* Notifications.swift in Sources */,
 				1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */,
+				1FC99E931B07B2C6005AFA6F /* IntroViewController.swift in Sources */,
 				1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */,
 				1FA8ED4B1AE14EC20082FF4C /* Alarm.swift in Sources */,
 				1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */,
@@ -620,6 +624,7 @@
 				1FE0FDDB1AF5B280007A756D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
