@@ -82,10 +82,22 @@ func createNotificationsForAlarm(alarm: Alarm) {
         let notification = UILocalNotification()
         let calendar: NSCalendar = NSCalendar.currentCalendar()
         let dateComponents: NSDateComponents = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitWeekday, fromDate: alarm.target)
+        let todayDateComponents: NSDateComponents = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitWeekday, fromDate: NSDate())
         
-        dateComponents.second = 0
+        todayDateComponents.second = 0
         
-        let target = calendar.dateFromComponents(dateComponents)
+        var target: NSDate? = nil
+        if dateComponents.hour < todayDateComponents.hour || (dateComponents.hour == todayDateComponents.hour && dateComponents.minute <= todayDateComponents.minute) {
+            todayDateComponents.hour = dateComponents.hour
+            todayDateComponents.minute = dateComponents.minute
+            target = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: 1, toDate: calendar.dateFromComponents(todayDateComponents)!, options: NSCalendarOptions(0))
+            println(target!.timeIntervalSinceNow)
+        } else {
+            todayDateComponents.hour = dateComponents.hour
+            todayDateComponents.minute = dateComponents.minute
+            target = calendar.dateFromComponents(todayDateComponents)
+        }
+        alarm.target = target!
         
         notification.fireDate = target
         notification.category = "ALARM_FIRED"
@@ -109,7 +121,7 @@ func createNotificationsForAlarm(alarm: Alarm) {
         
         dateComponents.second = 0
         
-        let target:NSDate = calendar.dateFromComponents(dateComponents)!
+        let target: NSDate = calendar.dateFromComponents(dateComponents)!
         
         let dayDifference: NSDateComponents = NSDateComponents()
         dayDifference.day = (day - dateComponents.weekday + 1) % 8

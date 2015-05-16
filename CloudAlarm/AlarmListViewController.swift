@@ -14,10 +14,10 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBAction func unwindFromAddEdit(segue: UIStoryboardSegue) -> Void {
         let source: AlarmAddEditViewController = segue.sourceViewController as! AlarmAddEditViewController
-        self.moc.save(nil)
         if let alarm = source.item {
             updateNotificationsForAlarm(alarm)
         }
+        self.moc.save(nil)
         self.tableView.reloadData()
     }
     
@@ -53,6 +53,16 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
         self.tableView.tableFooterView?.hidden = true
         self.dateFormatter.setLocalizedDateFormatFromTemplate("H:m")
         initNotifications()
+        
+        // disable alarms, that were already triggered
+        for alarm in (self.controller.sections![0] as! NSFetchedResultsSectionInfo).objects as! [Alarm] {
+            println(alarm.target.timeIntervalSinceNow)
+            if alarm.repeat.count == 0 && alarm.target.timeIntervalSinceNow <= 0 {
+                alarm.enabled = false
+            }
+        }
+        self.moc.save(nil)
+        
         
         let sharedDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         sharedDefaults!.setObject([:], forKey: "fireDates")
@@ -96,9 +106,8 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     func alarmStateChanged(cell: AlarmTableViewCell) {
         let alarm: Alarm = self.controller.objectAtIndexPath(self.tableView.indexPathForCell(cell)!) as! Alarm
         alarm.enabled = cell.uiSwitch.on
-        self.moc.save(nil)
-        
         updateNotificationsForAlarm(alarm)
+        self.moc.save(nil)
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
