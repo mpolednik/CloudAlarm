@@ -8,19 +8,10 @@
 
 import Foundation
 
-func hueIntegrationEnabled() -> Bool {
-    let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
-
-    let hueIp: String? = userDefaults!.valueForKey("hueIp") as! String?
-    let hueMac: String? = userDefaults!.valueForKey("hueMac") as! String?
-
-    if let ip = hueIp, mac = hueMac {
-        return true
-    }
-    
-    return false
-}
-
 func shortUUID(uuid: String) -> String {
     return uuid.stringByReplacingOccurrencesOfString("-", withString: "", options: nil, range: nil)
+}
+
+func dateComponentsFromCalendarForDate(calendar: NSCalendar, from: NSDate) -> NSDateComponents {
+    return calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitWeekday, fromDate: from)
 }

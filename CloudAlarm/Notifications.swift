@@ -10,29 +10,50 @@ import UIKit
 import CoreData
 
 
+func notificationForAlarm(alarm: Alarm) -> UILocalNotification {
+    let notification: UILocalNotification = UILocalNotification()
+    
+    notification.fireDate = alarm.target
+    notification.category = "ALARM_FIRED"
+    notification.alertTitle = alarm.label
+    notification.alertBody = "Good morning!"
+    notification.userInfo = ["uuid": alarm.uuid]
+    notification.soundName = "alarm.caf"
+    
+    return notification
+}
+
+func notificationForSnooze(notification: UILocalNotification) -> UILocalNotification {
+    let snoozeNotification: UILocalNotification = UILocalNotification()
+    
+    snoozeNotification.category = "ALARM_FIRED"
+    snoozeNotification.alertTitle = notification.alertBody
+    snoozeNotification.alertBody = "Good morning!"
+    snoozeNotification.userInfo = ["uuid": notification.userInfo!["uuid"]!]
+    snoozeNotification.soundName = "alarm.caf"
+    
+    return snoozeNotification
+}
+
+
 func initNotifications() {
     let category = UIMutableUserNotificationCategory()
     category.identifier = "ALARM_FIRED"
+    var actions: [UIMutableUserNotificationAction] = []
     
-    let actionSnooze = UIMutableUserNotificationAction()
-    actionSnooze.identifier = "SNOOZE"
-    actionSnooze.title = "Snooze"
-    actionSnooze.activationMode = UIUserNotificationActivationMode.Background
-    actionSnooze.authenticationRequired = false
-    actionSnooze.destructive = false
+    for actionString in ["Snooze", "Dissmiss"] {
+        let action = UIMutableUserNotificationAction()
+        action.identifier = actionString.uppercaseString
+        action.title = actionString
+        action.activationMode = UIUserNotificationActivationMode.Background
+        action.authenticationRequired = false
+        action.destructive = false
+        
+        actions.append(action)
+    }
     
-    let actionDissmiss = UIMutableUserNotificationAction()
-    actionDissmiss.identifier = "DISMISS"
-    actionDissmiss.title = "Dismiss"
-    actionDissmiss.activationMode = UIUserNotificationActivationMode.Background
-    actionDissmiss.authenticationRequired = false
-    actionDissmiss.destructive = false
-    
-    category.setActions([actionSnooze, actionDissmiss], forContext: UIUserNotificationActionContext.Default)
-    let categories: Set<UIUserNotificationCategory> = [category]
-    let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
-    let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: categories)
-    UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+    category.setActions(actions, forContext: UIUserNotificationActionContext.Default)
+    UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound, categories: [category]))
 }
 
 func findNotificationsForAlarm(alarm: Alarm) -> [UILocalNotification] {
@@ -48,45 +69,17 @@ func findNotificationsForAlarm(alarm: Alarm) -> [UILocalNotification] {
 }
 
 func createSnoozeForNotification(notification: UILocalNotification) {
-    let reminder = UILocalNotification()
     let calendar: NSCalendar = NSCalendar.currentCalendar()
     
     let minuteDifference: NSDateComponents = NSDateComponents()
     minuteDifference.minute = 5
     
+    let reminder = notificationForSnooze(notification)
     reminder.fireDate = calendar.dateByAddingComponents(minuteDifference, toDate: NSDate(), options: nil)
-    reminder.category = "ALARM_FIRED"
-    reminder.alertTitle = notification.alertBody
-    reminder.alertBody = "TEST"
-    reminder.userInfo = ["uuid": notification.userInfo!["uuid"]!]
-    reminder.soundName = "alarm.caf"
-    
-    if hueIntegrationEnabled() {
-        let request = PHBridgeSendAPI()
-        let state = PHLightState()
-        state.on = false
-        request.setLightStateForGroupWithId("0", lightState: state) {
-                (errors) -> Void in
-                println(errors)
-        }
-        
-        let schedule = PHSchedule()
-        schedule.date = calendar.dateByAddingComponents(minuteDifference, toDate: NSDate(), options: nil)
-        schedule.groupIdentifier = "0"
-        state.brightness = 254
-        state.transitionTime = 400
-        state.on = true
-        schedule.state = state
-        
-        request.createSchedule(schedule) {
-            (errors) -> Void in
-            println(errors)
-        }
-    }
-    
+    println(reminder)
+    hueScheduleForSnooze(calendar, minuteDifference)
     
     UIApplication.sharedApplication().scheduleLocalNotification(reminder)
-    return
 }
 
 func createNotificationsForAlarm(alarm: Alarm) {
@@ -94,80 +87,49 @@ func createNotificationsForAlarm(alarm: Alarm) {
         return
     }
     
+    let calendar: NSCalendar = NSCalendar.currentCalendar()
+    let dateComponents: NSDateComponents = dateComponentsFromCalendarForDate(calendar, alarm.target)
+    dateComponents.second = 0
+    
     if alarm.repeat.count == 0 || alarm.repeat.count == 7 {
-        let notification = UILocalNotification()
-        let calendar: NSCalendar = NSCalendar.currentCalendar()
-        let dateComponents: NSDateComponents = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitWeekday, fromDate: alarm.target)
-        let todayDateComponents: NSDateComponents = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitWeekday, fromDate: NSDate())
-        
+        let todayDateComponents: NSDateComponents = dateComponentsFromCalendarForDate(calendar, NSDate())
         todayDateComponents.second = 0
+        let pastTodayDateComponents = todayDateComponents.copy()
+        todayDateComponents.hour = dateComponents.hour
+        todayDateComponents.minute = dateComponents.minute
         
         var target: NSDate? = nil
-        if dateComponents.hour < todayDateComponents.hour || (dateComponents.hour == todayDateComponents.hour && dateComponents.minute <= todayDateComponents.minute) {
-            todayDateComponents.hour = dateComponents.hour
-            todayDateComponents.minute = dateComponents.minute
+        if dateComponents.hour < pastTodayDateComponents.hour || (dateComponents.hour == pastTodayDateComponents.hour && dateComponents.minute <= pastTodayDateComponents.minute) {
             target = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: 1, toDate: calendar.dateFromComponents(todayDateComponents)!, options: NSCalendarOptions(0))
         } else {
-            todayDateComponents.hour = dateComponents.hour
-            todayDateComponents.minute = dateComponents.minute
             target = calendar.dateFromComponents(todayDateComponents)
         }
         alarm.target = target!
         
-        notification.fireDate = target
-        notification.category = "ALARM_FIRED"
-        notification.alertTitle = alarm.label
-        notification.alertBody = "Good morning!"
-        notification.userInfo = ["uuid": alarm.uuid]
-        notification.soundName = "alarm.caf"
+        let notification: UILocalNotification = notificationForAlarm(alarm)
         if alarm.repeat.count == 7 {
             notification.repeatInterval = NSCalendarUnit.CalendarUnitDay
         }
         
-        if hueIntegrationEnabled() {
-            let schedule = PHSchedule()
-            schedule.date = target
-            schedule.groupIdentifier = "0"
-            let state = PHLightState()
-            state.brightness = 254
-            state.transitionTime = 150
-            state.on = true
-            schedule.state = state
-            schedule.name = shortUUID(alarm.uuid)
-            
-            let request = PHBridgeSendAPI()
-            request.createSchedule(schedule) {
-                (errors) -> Void in
-                println(errors)
-            }
-        }
+        hueScheduleForAlarm(alarm)
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        println(notification)
         return
     }
     
     for day in alarm.repeat {
-        let notification = UILocalNotification()
-        let calendar: NSCalendar = NSCalendar.currentCalendar()
-        let dateComponents: NSDateComponents = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitWeekday, fromDate: alarm.target)
-        
-        dateComponents.second = 0
-        
         let target: NSDate = calendar.dateFromComponents(dateComponents)!
         
         let dayDifference: NSDateComponents = NSDateComponents()
         dayDifference.day = (day - dateComponents.weekday + 1) % 8
 
-        notification.fireDate = calendar.dateByAddingComponents(dayDifference, toDate: target, options: nil)
-        notification.category = "ALARM_FIRED"
-        notification.alertTitle = alarm.label
-        notification.alertBody = "TEST"
-        notification.userInfo = ["uuid": alarm.uuid]
+        alarm.target = calendar.dateByAddingComponents(dayDifference, toDate: target, options: nil)!
+        
+        let notification: UILocalNotification = notificationForAlarm(alarm)
         notification.repeatInterval = NSCalendarUnit.CalendarUnitWeekday
-        notification.soundName = "alarm.caf"
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        return
     }
 }
 

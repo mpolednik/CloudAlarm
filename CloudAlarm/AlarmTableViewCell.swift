@@ -27,47 +27,23 @@ class AlarmTableViewCell: UITableViewCell {
     func setValues(item: Alarm, delegate: AlarmTableViewCellDelegate, dateFormatter: NSDateFormatter) {
         self.uiSwitch.setOn(item.enabled, animated: true)
         
-        var daysLabelText:String = ""
-        
-        var count = item.repeat.count
+        var daysLabelText: String = ""
         
         let wdays: [Int: String] = [0: "Sun ", 1: "Mon ", 2: "Tue ", 3: "Wed ", 4: "Thu ", 5: "Fri ", 6: "Sat "]
+        let wintervals: [Set<Int>: String] = [Set<Int>(): "No repeat", Set<Int>([0, 6]): "Weekends", Set<Int>([1, 2, 3, 4, 5]): "Work days", Set<Int>([0, 1, 2, 3, 4, 5, 6]): "Every day"]
         
         var daysArray = sorted(Array(item.repeat), {(e1: Int, e2: Int) -> Bool in e1 < e2}) as Array
         
-        if count > 0 {
-            for  element in 0...count-1 {
-                daysLabelText += wdays[daysArray[element]]!
+        if item.repeat.count > 0 {
+            for element in 0...item.repeat.count - 1 {
+                daysLabelText += wdays[element]!
             }
         }
         
-        if count == 2
-        {
-            if (daysArray[0] == 0 && daysArray[1] == 6) {
-                daysLabelText = "Weekends"
-            }
+        if let interval = wintervals[item.repeat] {
+            daysLabelText = interval
         }
         
-        if count == 5
-        {
-            if (daysArray[0] == 1 && daysArray[1] == 2 && daysArray[2] == 3 && daysArray[3] == 4 && daysArray[4] == 5 ) {
-                daysLabelText = "Work days"
-            }
-        }
-        
-        if count == 7
-        {
-            daysLabelText = "Every day"
-        }
-        
-        if daysLabelText == "" {
-            daysLabelText = "No repeat"
-        }
-        
-        var repeatString:String = ""
-        for days in item.repeat {
-            repeatString += String(days) + " "
-        }
         self.repeat.text = daysLabelText
         self.label.text = item.label
         self.delegate = delegate
