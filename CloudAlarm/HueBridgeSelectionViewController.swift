@@ -39,4 +39,12 @@ class HueBridgeSelectionViewController: UIViewController, UITableViewDataSource,
         cell.detailTextLabel!.text = self.keys[indexPath.row]
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "startPushlink" {
+            let destination: HueBridgeConnectionController = segue.destinationViewController as! HueBridgeConnectionController
+            let row = self.tableView.indexPathForSelectedRow()!.row
+            destination.selectedBridge = (self.keys[row], self.bridges[self.keys[row]]!)
+        }
+    }
 }

@@ -17,9 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.phHueSDK.startUpSDK()
+        
+        let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+        
+        let hueIp: String? = userDefaults!.valueForKey("hueIp") as! String?
+        let hueMac: String? = userDefaults!.valueForKey("hueMac") as! String?
+        
+        if let ip = hueIp, mac = hueMac {
+            let notificationManager = PHNotificationManager.defaultManager()
+            self.phHueSDK.setBridgeToUseWithIpAddress(ip, macAddress: mac)
+//            notificationManager.registerObject(self, withSelector: "hueNoAuth", forNotification: NO_LOCAL_AUTHENTICATION_NOTIFICATION)
+            
+            self.phHueSDK.enableLocalConnection()
+        }
+        
         return true
     }
-    
+
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         if let identifier = identifier {
             switch identifier {

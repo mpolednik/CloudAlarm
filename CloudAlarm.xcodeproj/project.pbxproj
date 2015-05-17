@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1F0616531B08AE0900DD92DA /* IntroLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0616521B08AE0900DD92DA /* IntroLoginRegisterViewController.swift */; };
 		1F0616551B08AEA700DD92DA /* IntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0616541B08AEA700DD92DA /* IntroTableViewCell.swift */; };
-		1F0616571B08CD4300DD92DA /* hue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0616561B08CD4300DD92DA /* hue.png */; };
 		1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */; };
 		1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */; };
 		1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */; };
@@ -26,6 +25,11 @@
 		1FC9CF931B08E8A100CCA93A /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF921B08E8A100CCA93A /* DDLog.m */; };
 		1FC9CF951B08E8A700CCA93A /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF941B08E8A700CCA93A /* DDTTYLogger.m */; };
 		1FC9CF971B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF961B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift */; };
+		1FC9CF991B08FB9100CCA93A /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC9CF981B08FB9100CCA93A /* press_smartbridge.png */; };
+		1FC9CF9B1B08FC9000CCA93A /* HueBridgeConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF9A1B08FC9000CCA93A /* HueBridgeConnectionViewController.swift */; };
+		1FC9CF9D1B090B4D00CCA93A /* alarm.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1FC9CF9C1B09096C00CCA93A /* alarm.caf */; };
+		1FC9CF9F1B090BBF00CCA93A /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF9E1B090BBF00CCA93A /* utils.swift */; };
+		1FC9CFA11B090FB900CCA93A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CFA01B090FB900CCA93A /* SettingsViewController.swift */; };
 		1FF9A0A41AF53B490029013A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9A0A31AF53B490029013A /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +49,6 @@
 /* Begin PBXFileReference section */
 		1F0616521B08AE0900DD92DA /* IntroLoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		1F0616541B08AEA700DD92DA /* IntroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroTableViewCell.swift; sourceTree = "<group>"; };
-		1F0616561B08CD4300DD92DA /* hue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hue.png; sourceTree = "<group>"; };
 		1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatViewController.swift; sourceTree = "<group>"; };
 		1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmActionsContainerViewController.swift; sourceTree = "<group>"; };
 		1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
@@ -66,6 +69,11 @@
 		1FC9CF921B08E8A100CCA93A /* DDLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Lumberjack/DDLog.m; sourceTree = "<group>"; };
 		1FC9CF941B08E8A700CCA93A /* DDTTYLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Lumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
 		1FC9CF961B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueBridgeSelectionViewController.swift; sourceTree = "<group>"; };
+		1FC9CF981B08FB9100CCA93A /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = press_smartbridge.png; sourceTree = "<group>"; };
+		1FC9CF9A1B08FC9000CCA93A /* HueBridgeConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueBridgeConnectionViewController.swift; sourceTree = "<group>"; };
+		1FC9CF9C1B09096C00CCA93A /* alarm.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarm.caf; sourceTree = "<group>"; };
+		1FC9CF9E1B090BBF00CCA93A /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		1FC9CFA01B090FB900CCA93A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1FE0FDDD1AF5B289007A756D /* CloudAlarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudAlarm.entitlements; sourceTree = "<group>"; };
 		1FF9A0A31AF53B490029013A /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,15 +121,18 @@
 		1FA8ED241AE14D7A0082FF4C /* CloudAlarm */ = {
 			isa = PBXGroup;
 			children = (
-				1F0616561B08CD4300DD92DA /* hue.png */,
+				1FC9CF9C1B09096C00CCA93A /* alarm.caf */,
+				1FC9CF981B08FB9100CCA93A /* press_smartbridge.png */,
 				1FE0FDDD1AF5B289007A756D /* CloudAlarm.entitlements */,
 				1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */,
 				1FA8ED2C1AE14D7A0082FF4C /* AlarmListViewController.swift */,
 				1FF9A0A31AF53B490029013A /* Notifications.swift */,
+				1FC9CF9E1B090BBF00CCA93A /* utils.swift */,
 				1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */,
 				1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */,
 				1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */,
 				1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */,
+				1FC9CFA01B090FB900CCA93A /* SettingsViewController.swift */,
 				1F0616521B08AE0900DD92DA /* IntroLoginRegisterViewController.swift */,
 				1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */,
 				1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */,
@@ -133,6 +144,7 @@
 				1FA8ED251AE14D7A0082FF4C /* Supporting Files */,
 				1FC9CF7C1B08E70F00CCA93A /* CloudAlarm-Bridging-Header.h */,
 				1FC9CF961B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift */,
+				1FC9CF9A1B08FC9000CCA93A /* HueBridgeConnectionViewController.swift */,
 			);
 			path = CloudAlarm;
 			sourceTree = "<group>";
@@ -209,9 +221,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0616571B08CD4300DD92DA /* hue.png in Resources */,
 				1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */,
 				1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */,
+				1FC9CF9D1B090B4D00CCA93A /* alarm.caf in Resources */,
+				1FC9CF991B08FB9100CCA93A /* press_smartbridge.png in Resources */,
 				1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC9CF9B1B08FC9000CCA93A /* HueBridgeConnectionViewController.swift in Sources */,
 				1FC9CF931B08E8A100CCA93A /* DDLog.m in Sources */,
 				1FC9CF971B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift in Sources */,
 				1FC9CF951B08E8A700CCA93A /* DDTTYLogger.m in Sources */,
@@ -238,6 +252,8 @@
 				1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */,
 				1F0616551B08AEA700DD92DA /* IntroTableViewCell.swift in Sources */,
 				1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */,
+				1FC9CF9F1B090BBF00CCA93A /* utils.swift in Sources */,
+				1FC9CFA11B090FB900CCA93A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

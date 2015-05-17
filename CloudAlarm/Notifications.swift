@@ -61,6 +61,30 @@ func createSnoozeForNotification(notification: UILocalNotification) {
     reminder.userInfo = ["uuid": notification.userInfo!["uuid"]!]
     reminder.soundName = "alarm.caf"
     
+    if hueIntegrationEnabled() {
+        let request = PHBridgeSendAPI()
+        let state = PHLightState()
+        state.on = false
+        request.setLightStateForGroupWithId("0", lightState: state) {
+                (errors) -> Void in
+                println(errors)
+        }
+        
+        let schedule = PHSchedule()
+        schedule.date = calendar.dateByAddingComponents(minuteDifference, toDate: NSDate(), options: nil)
+        schedule.groupIdentifier = "0"
+        state.brightness = 254
+        state.transitionTime = 400
+        state.on = true
+        schedule.state = state
+        
+        request.createSchedule(schedule) {
+            (errors) -> Void in
+            println(errors)
+        }
+    }
+    
+    
     UIApplication.sharedApplication().scheduleLocalNotification(reminder)
     return
 }
@@ -98,6 +122,24 @@ func createNotificationsForAlarm(alarm: Alarm) {
         notification.soundName = "alarm.caf"
         if alarm.repeat.count == 7 {
             notification.repeatInterval = NSCalendarUnit.CalendarUnitDay
+        }
+        
+        if hueIntegrationEnabled() {
+            let schedule = PHSchedule()
+            schedule.date = target
+            schedule.groupIdentifier = "0"
+            let state = PHLightState()
+            state.brightness = 254
+            state.transitionTime = 150
+            state.on = true
+            schedule.state = state
+            schedule.name = shortUUID(alarm.uuid)
+            
+            let request = PHBridgeSendAPI()
+            request.createSchedule(schedule) {
+                (errors) -> Void in
+                println(errors)
+            }
         }
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)

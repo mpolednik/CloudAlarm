@@ -15,6 +15,7 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func unwindFromAddEdit(segue: UIStoryboardSegue) -> Void {
         let source: AlarmAddEditViewController = segue.sourceViewController as! AlarmAddEditViewController
         if let alarm = source.item {
+            alarm.enabled = true
             updateNotificationsForAlarm(alarm)
         }
         self.moc.save(nil)
@@ -43,13 +44,13 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.moc.rollback()    }
+        self.moc.rollback()
+    }
     
     override func viewDidAppear(animated: Bool) {
         let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         
         let mail: String? = userDefaults!.valueForKey("mail") as! String?
-        println(mail)
         if mail == nil {
             self.performSegueWithIdentifier("showIntro", sender: self)
         }
