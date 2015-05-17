@@ -49,7 +49,7 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
         let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         
         let mail: String? = userDefaults!.valueForKey("mail") as! String?
-        
+        println(mail)
         if mail == nil {
             self.performSegueWithIdentifier("showIntro", sender: self)
         }

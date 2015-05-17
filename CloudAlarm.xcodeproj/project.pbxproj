@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F0616531B08AE0900DD92DA /* IntroLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0616521B08AE0900DD92DA /* IntroLoginRegisterViewController.swift */; };
 		1F0616551B08AEA700DD92DA /* IntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0616541B08AEA700DD92DA /* IntroTableViewCell.swift */; };
+		1F0616571B08CD4300DD92DA /* hue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0616561B08CD4300DD92DA /* hue.png */; };
 		1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */; };
 		1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */; };
 		1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */; };
@@ -18,22 +19,15 @@
 		1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */; };
 		1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED311AE14D7A0082FF4C /* Images.xcassets */; };
 		1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */; };
-		1FA8ED411AE14D7A0082FF4C /* CloudAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */; };
 		1FA8ED4B1AE14EC20082FF4C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */; };
 		1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */; };
 		1FC99E931B07B2C6005AFA6F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */; };
+		1FC9CF801B08E72400CCA93A /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC9CF7F1B08E72400CCA93A /* HueSDK_iOS.framework */; };
+		1FC9CF931B08E8A100CCA93A /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF921B08E8A100CCA93A /* DDLog.m */; };
+		1FC9CF951B08E8A700CCA93A /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF941B08E8A700CCA93A /* DDTTYLogger.m */; };
+		1FC9CF971B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF961B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift */; };
 		1FF9A0A41AF53B490029013A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9A0A31AF53B490029013A /* Notifications.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1FA8ED3B1AE14D7A0082FF4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FA8ED1A1AE14D790082FF4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1FA8ED211AE14D790082FF4C;
-			remoteInfo = CloudAlarm;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1F6998B91AF5AA0E0048D83E /* Embed App Extensions */ = {
@@ -51,9 +45,9 @@
 /* Begin PBXFileReference section */
 		1F0616521B08AE0900DD92DA /* IntroLoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		1F0616541B08AEA700DD92DA /* IntroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroTableViewCell.swift; sourceTree = "<group>"; };
+		1F0616561B08CD4300DD92DA /* hue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hue.png; sourceTree = "<group>"; };
 		1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatViewController.swift; sourceTree = "<group>"; };
 		1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmActionsContainerViewController.swift; sourceTree = "<group>"; };
-		1F6998AA1AF5AA0E0048D83E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA8ED261AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,12 +57,15 @@
 		1FA8ED2F1AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FA8ED311AE14D7A0082FF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FA8ED341AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1FA8ED3A1AE14D7A0082FF4C /* CloudAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FA8ED3F1AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudAlarmTests.swift; sourceTree = "<group>"; };
 		1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmAddEditViewController.swift; sourceTree = "<group>"; };
 		1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		1FC9CF7C1B08E70F00CCA93A /* CloudAlarm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudAlarm-Bridging-Header.h"; sourceTree = "<group>"; };
+		1FC9CF7F1B08E72400CCA93A /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
+		1FC9CF8F1B08E87700CCA93A /* Lumberjack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Lumberjack; sourceTree = "<group>"; };
+		1FC9CF921B08E8A100CCA93A /* DDLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Lumberjack/DDLog.m; sourceTree = "<group>"; };
+		1FC9CF941B08E8A700CCA93A /* DDTTYLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Lumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
+		1FC9CF961B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueBridgeSelectionViewController.swift; sourceTree = "<group>"; };
 		1FE0FDDD1AF5B289007A756D /* CloudAlarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudAlarm.entitlements; sourceTree = "<group>"; };
 		1FF9A0A31AF53B490029013A /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,13 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FA8ED371AE14D7A0082FF4C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1FC9CF801B08E72400CCA93A /* HueSDK_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +85,8 @@
 		1F6998A91AF5AA0E0048D83E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F6998AA1AF5AA0E0048D83E /* NotificationCenter.framework */,
+				1FC9CF8F1B08E87700CCA93A /* Lumberjack */,
+				1FC9CF7F1B08E72400CCA93A /* HueSDK_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,9 +94,10 @@
 		1FA8ED191AE14D790082FF4C = {
 			isa = PBXGroup;
 			children = (
-				1FA8ED241AE14D7A0082FF4C /* CloudAlarm */,
-				1FA8ED3D1AE14D7A0082FF4C /* CloudAlarmTests */,
+				1FC9CF941B08E8A700CCA93A /* DDTTYLogger.m */,
+				1FC9CF921B08E8A100CCA93A /* DDLog.m */,
 				1F6998A91AF5AA0E0048D83E /* Frameworks */,
+				1FA8ED241AE14D7A0082FF4C /* CloudAlarm */,
 				1FA8ED231AE14D7A0082FF4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */,
-				1FA8ED3A1AE14D7A0082FF4C /* CloudAlarmTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +113,7 @@
 		1FA8ED241AE14D7A0082FF4C /* CloudAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				1F0616561B08CD4300DD92DA /* hue.png */,
 				1FE0FDDD1AF5B289007A756D /* CloudAlarm.entitlements */,
 				1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */,
 				1FA8ED2C1AE14D7A0082FF4C /* AlarmListViewController.swift */,
@@ -138,6 +131,8 @@
 				1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */,
 				1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */,
 				1FA8ED251AE14D7A0082FF4C /* Supporting Files */,
+				1FC9CF7C1B08E70F00CCA93A /* CloudAlarm-Bridging-Header.h */,
+				1FC9CF961B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift */,
 			);
 			path = CloudAlarm;
 			sourceTree = "<group>";
@@ -146,23 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				1FA8ED261AE14D7A0082FF4C /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1FA8ED3D1AE14D7A0082FF4C /* CloudAlarmTests */ = {
-			isa = PBXGroup;
-			children = (
-				1FA8ED401AE14D7A0082FF4C /* CloudAlarmTests.swift */,
-				1FA8ED3E1AE14D7A0082FF4C /* Supporting Files */,
-			);
-			path = CloudAlarmTests;
-			sourceTree = "<group>";
-		};
-		1FA8ED3E1AE14D7A0082FF4C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1FA8ED3F1AE14D7A0082FF4C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -188,24 +166,6 @@
 			productReference = 1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1FA8ED391AE14D7A0082FF4C /* CloudAlarmTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1FA8ED471AE14D7A0082FF4C /* Build configuration list for PBXNativeTarget "CloudAlarmTests" */;
-			buildPhases = (
-				1FA8ED361AE14D7A0082FF4C /* Sources */,
-				1FA8ED371AE14D7A0082FF4C /* Frameworks */,
-				1FA8ED381AE14D7A0082FF4C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1FA8ED3C1AE14D7A0082FF4C /* PBXTargetDependency */,
-			);
-			name = CloudAlarmTests;
-			productName = CloudAlarmTests;
-			productReference = 1FA8ED3A1AE14D7A0082FF4C /* CloudAlarmTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,10 +184,6 @@
 							};
 						};
 					};
-					1FA8ED391AE14D7A0082FF4C = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 1FA8ED211AE14D790082FF4C;
-					};
 				};
 			};
 			buildConfigurationList = 1FA8ED1D1AE14D790082FF4C /* Build configuration list for PBXProject "CloudAlarm" */;
@@ -244,7 +200,6 @@
 			projectRoot = "";
 			targets = (
 				1FA8ED211AE14D790082FF4C /* CloudAlarm */,
-				1FA8ED391AE14D7A0082FF4C /* CloudAlarmTests */,
 			);
 		};
 /* End PBXProject section */
@@ -254,16 +209,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0616571B08CD4300DD92DA /* hue.png in Resources */,
 				1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */,
 				1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */,
 				1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FA8ED381AE14D7A0082FF4C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC9CF931B08E8A100CCA93A /* DDLog.m in Sources */,
+				1FC9CF971B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift in Sources */,
+				1FC9CF951B08E8A700CCA93A /* DDTTYLogger.m in Sources */,
 				1FA8ED2D1AE14D7A0082FF4C /* AlarmListViewController.swift in Sources */,
 				1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */,
 				1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */,
@@ -289,23 +241,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FA8ED361AE14D7A0082FF4C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FA8ED411AE14D7A0082FF4C /* CloudAlarmTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1FA8ED3C1AE14D7A0082FF4C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1FA8ED211AE14D790082FF4C /* CloudAlarm */;
-			targetProxy = 1FA8ED3B1AE14D7A0082FF4C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */ = {
@@ -331,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -366,6 +303,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -375,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -403,6 +342,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -412,13 +352,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CloudAlarm/CloudAlarm.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CloudAlarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CloudAlarm/CloudAlarm-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -426,47 +373,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CloudAlarm/CloudAlarm.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CloudAlarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		1FA8ED481AE14D7A0082FF4C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CloudAlarmTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudAlarm.app/CloudAlarm";
-			};
-			name = Debug;
-		};
-		1FA8ED491AE14D7A0082FF4C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CloudAlarmTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudAlarm.app/CloudAlarm";
+				SWIFT_OBJC_BRIDGING_HEADER = "CloudAlarm/CloudAlarm-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -487,15 +406,6 @@
 			buildConfigurations = (
 				1FA8ED451AE14D7A0082FF4C /* Debug */,
 				1FA8ED461AE14D7A0082FF4C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1FA8ED471AE14D7A0082FF4C /* Build configuration list for PBXNativeTarget "CloudAlarmTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FA8ED481AE14D7A0082FF4C /* Debug */,
-				1FA8ED491AE14D7A0082FF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

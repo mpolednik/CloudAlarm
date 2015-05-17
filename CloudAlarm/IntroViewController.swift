@@ -12,14 +12,7 @@ class IntroViewController: UIPageViewController, UIPageViewControllerDataSource,
     
     let introPageViewControllerNames = ["IntroWelcome", "IntroLoginRegister"]
     var introPageViewControllers: [UIViewController] = []
-    
-    override func viewWillAppear(animated: Bool) {
-        let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
-        
-        userDefaults!.setObject("k", forKey: "mail")
-        userDefaults!.synchronize()
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
