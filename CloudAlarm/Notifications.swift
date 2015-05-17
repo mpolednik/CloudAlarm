@@ -76,7 +76,6 @@ func createSnoozeForNotification(notification: UILocalNotification) {
     
     let reminder = notificationForSnooze(notification)
     reminder.fireDate = calendar.dateByAddingComponents(minuteDifference, toDate: NSDate(), options: nil)
-    println(reminder)
     hueScheduleForSnooze(calendar, minuteDifference)
     
     UIApplication.sharedApplication().scheduleLocalNotification(reminder)
@@ -94,7 +93,7 @@ func createNotificationsForAlarm(alarm: Alarm) {
     if alarm.repeat.count == 0 || alarm.repeat.count == 7 {
         let todayDateComponents: NSDateComponents = dateComponentsFromCalendarForDate(calendar, NSDate())
         todayDateComponents.second = 0
-        let pastTodayDateComponents = todayDateComponents.copy()
+        let pastTodayDateComponents: NSDateComponents = todayDateComponents.copy() as! NSDateComponents
         todayDateComponents.hour = dateComponents.hour
         todayDateComponents.minute = dateComponents.minute
         
@@ -114,7 +113,6 @@ func createNotificationsForAlarm(alarm: Alarm) {
         hueScheduleForAlarm(alarm)
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        println(notification)
         return
     }
     

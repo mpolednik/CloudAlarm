@@ -16,9 +16,9 @@ class SettingsViewController: UITableViewController, UITableViewDataSource {
     override func viewDidLoad() {
         let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         
-        let mail: String? = userDefaults!.valueForKey("mail") as! String?
-        if let mail = mail {
-            self.username.textLabel!.text = mail
+        let username: String? = userDefaults!.valueForKey("username") as! String?
+        if let username = username {
+            self.username.textLabel!.text = username
         } else {
             self.username.textLabel!.text = "Not set"
         }

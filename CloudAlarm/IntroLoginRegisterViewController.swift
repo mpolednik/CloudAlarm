@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class IntroLoginRegisterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -54,11 +55,7 @@ class IntroLoginRegisterViewController: UIViewController, UITableViewDataSource,
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "setupDone" {
-            let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
-            
-            userDefaults!.setObject((self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! IntroTableViewCell).field.text, forKey: "mail")
-            userDefaults!.setObject((self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! IntroTableViewCell).field.text, forKey: "password")
-            userDefaults!.synchronize()
+            register((self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! IntroTableViewCell).field.text, (self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! IntroTableViewCell).field.text)
         }
     }
 }

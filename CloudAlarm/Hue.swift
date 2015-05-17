@@ -68,7 +68,7 @@ func hueScheduleForSnooze(calendar: NSCalendar, timeDiff: NSDateComponents) {
         (errors) -> Void in
         println(errors)
     }
-    println(calendar.dateByAddingComponents(timeDiff, toDate: NSDate(), options: nil))
+    
     let schedule = hueBasicSchedule(hueBasicState())
     schedule.date = calendar.dateByAddingComponents(timeDiff, toDate: NSDate(), options: nil)
     

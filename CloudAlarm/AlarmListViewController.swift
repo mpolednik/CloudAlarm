@@ -9,9 +9,8 @@
 import UIKit
 import CoreData
 
-class AlarmListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AlarmTableViewCellDelegate, NSFetchedResultsControllerDelegate {
+class AlarmListViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, AlarmTableViewCellDelegate, NSFetchedResultsControllerDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
     @IBAction func unwindFromAddEdit(segue: UIStoryboardSegue) -> Void {
         let source: AlarmAddEditViewController = segue.sourceViewController as! AlarmAddEditViewController
         if let alarm = source.item {
@@ -50,8 +49,8 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidAppear(animated: Bool) {
         let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         
-        let mail: String? = userDefaults!.valueForKey("mail") as! String?
-        if mail == nil {
+        let accessToken: String? = userDefaults!.valueForKey("accessToken") as! String?
+        if accessToken == nil {
             self.performSegueWithIdentifier("showIntro", sender: self)
         }
     }
@@ -70,6 +69,13 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
             }
         }
         self.moc.save(nil)
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func refresh() -> Void {
+        println("refresh")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -93,11 +99,11 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.controller.sections![section] as! NSFetchedResultsSectionInfo).numberOfObjects
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: AlarmTableViewCell = tableView.dequeueReusableCellWithIdentifier("AlarmTableViewCell") as! AlarmTableViewCell
         let alarm: Alarm = self.controller.objectAtIndexPath(indexPath) as! Alarm
         
@@ -113,11 +119,11 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
         self.moc.save(nil)
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             let alarm: Alarm = self.controller.objectAtIndexPath(indexPath) as! Alarm
             deleteNotificationsForAlarm(alarm)
