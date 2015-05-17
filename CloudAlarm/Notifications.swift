@@ -65,14 +65,6 @@ func createSnoozeForNotification(notification: UILocalNotification) {
     return
 }
 
-func addAlarmTargetToSharedDefaults(alarm: Alarm) {
-    let sharedDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
-    var copy = sharedDefaults!.valueForKey("fireDates")!.mutableCopy() as! [String: [NSDate]]
-    copy[alarm.uuid] = [alarm.target]
-    sharedDefaults!.setObject(copy, forKey: "fireDates")
-    sharedDefaults!.synchronize()
-}
-
 func createNotificationsForAlarm(alarm: Alarm) {
     if !alarm.enabled {
         return
@@ -91,7 +83,6 @@ func createNotificationsForAlarm(alarm: Alarm) {
             todayDateComponents.hour = dateComponents.hour
             todayDateComponents.minute = dateComponents.minute
             target = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: 1, toDate: calendar.dateFromComponents(todayDateComponents)!, options: NSCalendarOptions(0))
-            println(target!.timeIntervalSinceNow)
         } else {
             todayDateComponents.hour = dateComponents.hour
             todayDateComponents.minute = dateComponents.minute
@@ -109,7 +100,6 @@ func createNotificationsForAlarm(alarm: Alarm) {
             notification.repeatInterval = NSCalendarUnit.CalendarUnitDay
         }
         
-        addAlarmTargetToSharedDefaults(alarm)
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         return
     }
@@ -134,7 +124,6 @@ func createNotificationsForAlarm(alarm: Alarm) {
         notification.repeatInterval = NSCalendarUnit.CalendarUnitWeekday
         notification.soundName = "alarm.caf"
         
-        addAlarmTargetToSharedDefaults(alarm)
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         return
     }

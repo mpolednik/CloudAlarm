@@ -43,12 +43,20 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.moc.rollback()
+        self.moc.rollback()    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+        
+        let mail: String? = userDefaults!.valueForKey("mail") as! String?
+        
+        if mail == nil {
+            self.performSegueWithIdentifier("showIntro", sender: self)
+        }
     }
     
     override func viewDidLoad() -> Void {
         super.viewDidLoad()
-        
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.tableView.tableFooterView?.hidden = true
         self.dateFormatter.setLocalizedDateFormatFromTemplate("H:m")
@@ -56,7 +64,6 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
         
         // disable alarms, that were already triggered
         for alarm in (self.controller.sections![0] as! NSFetchedResultsSectionInfo).objects as! [Alarm] {
-            println(alarm.target.timeIntervalSinceNow)
             if alarm.repeat.count == 0 && alarm.target.timeIntervalSinceNow <= 0 {
                 alarm.enabled = false
             }
@@ -66,19 +73,19 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
-            let destination: AlarmAddEditViewController = segue.destinationViewController as! AlarmAddEditViewController
+            let destination: UIViewController = segue.destinationViewController as! UIViewController
             
             switch identifier {
             case "showEdit":
                 if let indexPath = self.tableView.indexPathForSelectedRow() {
-                    destination.item = self.controller.objectAtIndexPath(indexPath) as? Alarm
-                    destination.edit = true
+                    (destination as! AlarmAddEditViewController).item = self.controller.objectAtIndexPath(indexPath) as? Alarm
+                    (destination as! AlarmAddEditViewController).edit = true
                 }
             case "showAdd":
                 let newAlarm: Alarm = NSEntityDescription.insertNewObjectForEntityForName("Alarm", inManagedObjectContext: self.moc) as! Alarm
                 newAlarm.initDefaults()
                 
-                destination.item = newAlarm
+                (destination as! AlarmAddEditViewController).item = newAlarm
             default:
                 break
             }

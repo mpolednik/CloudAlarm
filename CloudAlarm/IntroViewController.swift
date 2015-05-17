@@ -14,15 +14,14 @@ class IntroViewController: UIPageViewController, UIPageViewControllerDataSource,
     var introPageViewControllers: [UIViewController] = []
     
     override func viewWillAppear(animated: Bool) {
-        let sharedDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+        let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         
-        sharedDefaults!.setObject("k", forKey: "test")
-        sharedDefaults!.synchronize()
+        userDefaults!.setObject("k", forKey: "mail")
+        userDefaults!.synchronize()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(self.introPageViewControllers)
         
         self.dataSource = self
         self.delegate = self
@@ -30,7 +29,6 @@ class IntroViewController: UIPageViewController, UIPageViewControllerDataSource,
         for pageName in introPageViewControllerNames {
             introPageViewControllers.append(self.storyboard!.instantiateViewControllerWithIdentifier(pageName)! as! UIViewController)
         }
-        println(self.introPageViewControllers)
         
         self.setViewControllers([self.introPageViewControllers[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
