@@ -64,6 +64,7 @@ func hueScheduleForSnooze(calendar: NSCalendar, timeDiff: NSDateComponents) {
     let request = PHBridgeSendAPI()
     let state = PHLightState()
     state.on = false
+    state.brightness = 0
     request.setLightStateForGroupWithId("0", lightState: state) {
         (errors) -> Void in
         println(errors)
