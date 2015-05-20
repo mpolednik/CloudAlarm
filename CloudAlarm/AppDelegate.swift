@@ -24,10 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let hueMac: String? = userDefaults!.valueForKey("hueMac") as! String?
         
         if let ip = hueIp, mac = hueMac {
-            let notificationManager = PHNotificationManager.defaultManager()
             self.phHueSDK.setBridgeToUseWithIpAddress(ip, macAddress: mac)
-//            notificationManager.registerObject(self, withSelector: "hueNoAuth", forNotification: NO_LOCAL_AUTHENTICATION_NOTIFICATION)
-            
             self.phHueSDK.enableLocalConnection()
         }
         

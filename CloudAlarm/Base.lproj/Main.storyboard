@@ -122,6 +122,7 @@
                                     <outlet property="repeat" destination="34d-4A-025" id="VRh-cJ-tC4"/>
                                     <outlet property="time" destination="pYS-qd-qog" id="NDg-Ww-nPi"/>
                                     <outlet property="uiSwitch" destination="0s2-6Z-0Jr" id="T0u-Za-0YX"/>
+                                    <segue destination="7N7-W9-AU1" kind="push" identifier="showEdit" id="rni-P7-SfH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -408,6 +409,27 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="n6Q-v3-W6H">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n6Q-v3-W6H" id="Aqd-3A-n4u">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBZ-ob-cbx">
+                                                    <rect key="frame" x="87" y="7" width="146" height="30"/>
+                                                    <state key="normal" title="Remove Bridge">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="removeBridge" destination="fQT-Xd-sp2" eventType="touchDown" id="gGE-qT-Ydb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="QBZ-ob-cbx" secondAttribute="centerX" id="83o-dQ-nBR"/>
+                                                <constraint firstAttribute="centerY" secondItem="QBZ-ob-cbx" secondAttribute="centerY" id="JX3-Tq-osg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -639,5 +661,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="PeB-tl-bxt"/>
+        <segue reference="rni-P7-SfH"/>
     </inferredMetricsTieBreakers>
 </document>

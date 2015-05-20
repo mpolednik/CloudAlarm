@@ -16,6 +16,7 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
         if let alarm = source.item {
             alarm.enabled = true
             updateNotificationsForAlarm(alarm)
+            alarm.last_changed = NSDate()
         }
         self.moc.save(nil)
         self.tableView.reloadData()
@@ -31,6 +32,7 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
             let sortingByEnabled: NSSortDescriptor = NSSortDescriptor(key: "enabled", ascending: false)
             let sortingByTarget: NSSortDescriptor = NSSortDescriptor(key: "target", ascending: true)
             request.sortDescriptors = [sortingByEnabled, sortingByTarget]
+            request.predicate = NSPredicate(format: "removed == NO")
             let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.moc, sectionNameKeyPath: nil, cacheName: nil)
             controller.delegate = self
             controller.performFetch(nil)
@@ -44,6 +46,8 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.moc.rollback()
+        
+        let uiPoll = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "refresh", userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -62,20 +66,22 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
         self.dateFormatter.setLocalizedDateFormatFromTemplate("H:m")
         initNotifications()
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func refresh() -> Void {
         // disable alarms, that were already triggered
         for alarm in (self.controller.sections![0] as! NSFetchedResultsSectionInfo).objects as! [Alarm] {
             if alarm.repeat.count == 0 && alarm.target.timeIntervalSinceNow <= 0 {
                 alarm.enabled = false
             }
         }
-        self.moc.save(nil)
         
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
-    }
-    
-    func refresh() -> Void {
-        println("refresh")
+        syncAlarms(self.controller)
+        
+        self.tableView.reloadData()
+        self.moc.save(nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

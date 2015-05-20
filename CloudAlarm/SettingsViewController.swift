@@ -14,6 +14,10 @@ class SettingsViewController: UITableViewController, UITableViewDataSource {
     @IBOutlet weak var bridge: UITableViewCell!
     
     override func viewDidLoad() {
+        self.refresh()
+    }
+    
+    func refresh() {
         let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         
         let username: String? = userDefaults!.valueForKey("username") as! String?
@@ -30,6 +34,18 @@ class SettingsViewController: UITableViewController, UITableViewDataSource {
             bridge.detailTextLabel!.text = mac
         } else {
             bridge.textLabel!.text = "Not set"
+            bridge.detailTextLabel!.text = ""
         }
+    }
+    
+    @IBAction func removeBridge() {
+        let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+        userDefaults!.removeObjectForKey("hueIp")
+        userDefaults!.removeObjectForKey("hueMac")
+        userDefaults!.synchronize()
+        
+        (UIApplication.sharedApplication().delegate as! AppDelegate).phHueSDK.disableLocalConnection()
+        
+        self.refresh()
     }
 }

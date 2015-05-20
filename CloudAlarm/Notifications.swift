@@ -100,6 +100,8 @@ func createNotificationsForAlarm(alarm: Alarm) {
         var target: NSDate? = nil
         if dateComponents.hour < pastTodayDateComponents.hour || (dateComponents.hour == pastTodayDateComponents.hour && dateComponents.minute <= pastTodayDateComponents.minute) {
             target = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: 1, toDate: calendar.dateFromComponents(todayDateComponents)!, options: NSCalendarOptions(0))
+        } else if dateComponents.day > pastTodayDateComponents.day {
+            target = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: -1, toDate: calendar.dateFromComponents(todayDateComponents)!, options: NSCalendarOptions(0))
         } else {
             target = calendar.dateFromComponents(todayDateComponents)
         }

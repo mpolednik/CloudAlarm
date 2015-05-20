@@ -11,6 +11,7 @@
 		1F0616551B08AEA700DD92DA /* IntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0616541B08AEA700DD92DA /* IntroTableViewCell.swift */; };
 		1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */; };
 		1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */; };
+		1F3AEC3A1B0CBDFC002E02C7 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3AEC391B0CBDFC002E02C7 /* Alarm.swift */; };
 		1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */; };
 		1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */; };
 		1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */; };
@@ -18,7 +19,6 @@
 		1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */; };
 		1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED311AE14D7A0082FF4C /* Images.xcassets */; };
 		1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */; };
-		1FA8ED4B1AE14EC20082FF4C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */; };
 		1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */; };
 		1FC99E931B07B2C6005AFA6F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */; };
 		1FC9CF801B08E72400CCA93A /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC9CF7F1B08E72400CCA93A /* HueSDK_iOS.framework */; };
@@ -104,6 +104,7 @@
 		1F0616541B08AEA700DD92DA /* IntroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroTableViewCell.swift; sourceTree = "<group>"; };
 		1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatViewController.swift; sourceTree = "<group>"; };
 		1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmActionsContainerViewController.swift; sourceTree = "<group>"; };
+		1F3AEC391B0CBDFC002E02C7 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA8ED261AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		1FA8ED2F1AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FA8ED311AE14D7A0082FF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FA8ED341AE14D7A0082FF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmAddEditViewController.swift; sourceTree = "<group>"; };
 		1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		1FC9CF7C1B08E70F00CCA93A /* CloudAlarm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudAlarm-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 				1FA8ED311AE14D7A0082FF4C /* Images.xcassets */,
 				1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */,
 				1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */,
-				1FA8ED4A1AE14EC20082FF4C /* Alarm.swift */,
+				1F3AEC391B0CBDFC002E02C7 /* Alarm.swift */,
 				1FA8ED251AE14D7A0082FF4C /* Supporting Files */,
 				1FC9CF7C1B08E70F00CCA93A /* CloudAlarm-Bridging-Header.h */,
 				1FC9CF961B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift */,
@@ -353,6 +353,7 @@
 				1FC9CF951B08E8A700CCA93A /* DDTTYLogger.m in Sources */,
 				1FA8ED2D1AE14D7A0082FF4C /* AlarmListViewController.swift in Sources */,
 				1FC9CFA31B09311500CCA93A /* Hue.swift in Sources */,
+				1F3AEC3A1B0CBDFC002E02C7 /* Alarm.swift in Sources */,
 				1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */,
 				1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */,
 				1FF9A0A41AF53B490029013A /* Notifications.swift in Sources */,
@@ -360,7 +361,6 @@
 				1FC99E931B07B2C6005AFA6F /* IntroViewController.swift in Sources */,
 				1F0616531B08AE0900DD92DA /* IntroLoginRegisterViewController.swift in Sources */,
 				1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */,
-				1FA8ED4B1AE14EC20082FF4C /* Alarm.swift in Sources */,
 				1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */,
 				1F0616551B08AEA700DD92DA /* IntroTableViewCell.swift in Sources */,
 				1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */,

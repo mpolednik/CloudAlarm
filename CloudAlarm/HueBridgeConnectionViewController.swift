@@ -38,6 +38,9 @@ class HueBridgeConnectionController: UIViewController {
         userDefaults!.setObject(selectedBridge!.1, forKey: "hueIp")
         userDefaults!.synchronize()
         
+        (UIApplication.sharedApplication().delegate as! AppDelegate).phHueSDK.setBridgeToUseWithIpAddress(selectedBridge!.1, macAddress: selectedBridge!.0)
+        (UIApplication.sharedApplication().delegate as! AppDelegate).phHueSDK.enableLocalConnection()
+        
         self.performSegueWithIdentifier("bridgeSetupFinished", sender: self)
     }
     

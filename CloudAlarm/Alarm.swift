@@ -2,7 +2,7 @@
 //  Alarm.swift
 //  CloudAlarm
 //
-//  Created by Martin Polednik on 4/17/15.
+//  Created by Martin Polednik on 5/20/15.
 //  Copyright (c) 2015 cz.fi.muni. All rights reserved.
 //
 
@@ -11,11 +11,13 @@ import CoreData
 
 class Alarm: NSManagedObject {
 
-    @NSManaged var uuid: String
     @NSManaged var enabled: Bool
-    @NSManaged var target: NSDate
     @NSManaged var label: String
     @NSManaged var repeat: Set<Int>
+    @NSManaged var target: NSDate
+    @NSManaged var uuid: String
+    @NSManaged var removed: Bool
+    @NSManaged var last_changed: NSDate
 
     func initDefaults() {
         self.enabled = true
@@ -23,5 +25,6 @@ class Alarm: NSManagedObject {
         self.repeat = []
         self.target = NSDate()
         self.label = ""
+        self.removed = false
     }
 }
