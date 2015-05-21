@@ -12,6 +12,7 @@
 		1F2B59301AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */; };
 		1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */; };
 		1F3AEC3A1B0CBDFC002E02C7 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3AEC391B0CBDFC002E02C7 /* Alarm.swift */; };
+		1F3AEC531B0D55DD002E02C7 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3AEC521B0D55DD002E02C7 /* SwiftyJSON.swift */; };
 		1F6C3C8E1AEA853200E85CFC /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */; };
 		1FA8ED281AE14D7A0082FF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */; };
 		1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED291AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld */; };
@@ -105,6 +106,7 @@
 		1F2B592F1AEBF7C8004AB9A2 /* AlarmRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatViewController.swift; sourceTree = "<group>"; };
 		1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmActionsContainerViewController.swift; sourceTree = "<group>"; };
 		1F3AEC391B0CBDFC002E02C7 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		1F3AEC521B0D55DD002E02C7 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		1F6C3C8D1AEA853200E85CFC /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		1FA8ED221AE14D7A0082FF4C /* CloudAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA8ED261AE14D7A0082FF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				1FA8ED271AE14D7A0082FF4C /* AppDelegate.swift */,
 				1FA8ED2C1AE14D7A0082FF4C /* AlarmListViewController.swift */,
 				1FF9A0A31AF53B490029013A /* Notifications.swift */,
+				1F3AEC521B0D55DD002E02C7 /* SwiftyJSON.swift */,
 				1FC9CFA21B09311500CCA93A /* Hue.swift */,
 				1FC9CF9E1B090BBF00CCA93A /* utils.swift */,
 				1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */,
@@ -358,6 +361,7 @@
 				1FA8ED2B1AE14D7A0082FF4C /* CloudAlarm.xcdatamodeld in Sources */,
 				1FF9A0A41AF53B490029013A /* Notifications.swift in Sources */,
 				1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */,
+				1F3AEC531B0D55DD002E02C7 /* SwiftyJSON.swift in Sources */,
 				1FC99E931B07B2C6005AFA6F /* IntroViewController.swift in Sources */,
 				1F0616531B08AE0900DD92DA /* IntroLoginRegisterViewController.swift in Sources */,
 				1F2B59321AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift in Sources */,

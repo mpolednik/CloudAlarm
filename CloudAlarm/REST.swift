@@ -53,12 +53,10 @@ func syncAlarms(controller: NSFetchedResultsController) -> Void {
     }
     
     if let accessToken = accessToken {
-        Alamofire.request(Method.GET, BASE_URL + "/alarms", parameters: ["access_token": accessToken]).responseJSON {
-            (request, response, JSON, error) in
-            for alarm in JSON as! [String: AnyObject] {
-                println(alarm)
-                println("SEPARATOR")
-            }
+        Alamofire.request(Method.GET, BASE_URL + "/alarms", parameters: ["access_token": accessToken]).response {
+            (request, response, data, error) in
+            let json = JSON(data: (data as? NSData)!)
+            println(json["data"][0]["enabled"])
         }
     }
 }
