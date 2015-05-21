@@ -22,7 +22,7 @@
 		<key>2A1E6B537688564172CB2086A8F06651F1873A12</key>
 		<string>../..</string>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../../Alamofire/</string>
+		<string>../../Alamofire</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mpolednik/CloudAlarm</string>

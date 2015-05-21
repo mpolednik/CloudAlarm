@@ -21,6 +21,7 @@
 		1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED311AE14D7A0082FF4C /* Images.xcassets */; };
 		1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA8ED331AE14D7A0082FF4C /* LaunchScreen.xib */; };
 		1FA8ED4D1AE14FF60082FF4C /* AlarmAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8ED4C1AE14FF60082FF4C /* AlarmAddEditViewController.swift */; };
+		1FB668B61B0E590D00FCEF2F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA0DE6F1B0E56FA00AC9B50 /* Alamofire.framework */; };
 		1FC99E931B07B2C6005AFA6F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */; };
 		1FC9CF801B08E72400CCA93A /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC9CF7F1B08E72400CCA93A /* HueSDK_iOS.framework */; };
 		1FC9CF931B08E8A100CCA93A /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CF921B08E8A100CCA93A /* DDLog.m */; };
@@ -131,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB668B61B0E590D00FCEF2F /* Alamofire.framework in Frameworks */,
 				1FC9CF801B08E72400CCA93A /* HueSDK_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
