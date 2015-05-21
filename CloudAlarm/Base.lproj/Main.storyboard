@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-nu-KJN">
-                                <rect key="frame" x="0.0" y="242" width="320" height="326"/>
+                            <containerView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-nu-KJN">
+                                <rect key="frame" x="0.0" y="242" width="320" height="277"/>
                                 <connections>
                                     <segue destination="oCF-EM-91N" kind="embed" identifier="embedAlarmActionsViewController" id="ETp-aM-wmm"/>
                                 </connections>
@@ -162,31 +162,37 @@
                         <viewControllerLayoutGuide type="top" id="yQd-7p-cJz"/>
                         <viewControllerLayoutGuide type="bottom" id="3c1-DB-8Xd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BAK-Xp-KaV">
+                    <view key="view" contentMode="scaleToFill" id="BAK-Xp-KaV" customClass="IntroHelloRegisterViewController" customModule="CloudAlarm" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ0-Ca-oHo">
-                                <rect key="frame" x="83" y="55" width="154" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ0-Ca-oHo">
+                                <rect key="frame" x="86" y="55" width="148" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Swipe right to get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXj-8d-wcc">
-                                <rect key="frame" x="-90" y="259" width="500" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe right to get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXj-8d-wcc">
+                                <rect key="frame" x="22" y="162" width="276" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="aXj-8d-wcc" secondAttribute="centerX" id="Juv-dd-vl8"/>
-                            <constraint firstAttribute="centerY" secondItem="aXj-8d-wcc" secondAttribute="centerY" id="KYX-Qp-WCT"/>
+                            <constraint firstAttribute="centerY" secondItem="aXj-8d-wcc" secondAttribute="centerY" constant="107" id="LKh-mZ-Mk7"/>
                             <constraint firstItem="qJ0-Ca-oHo" firstAttribute="top" secondItem="yQd-7p-cJz" secondAttribute="bottom" constant="35" id="WB7-OH-2ry"/>
+                            <constraint firstAttribute="centerX" secondItem="aXj-8d-wcc" secondAttribute="centerX" id="cYb-wO-ZlX"/>
                             <constraint firstItem="qJ0-Ca-oHo" firstAttribute="top" secondItem="yQd-7p-cJz" secondAttribute="bottom" constant="35" id="uu4-sr-Qx7"/>
                             <constraint firstAttribute="centerX" secondItem="qJ0-Ca-oHo" secondAttribute="centerX" id="y3n-us-Y4C"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.67330399618667824" green="0.85391361180817549" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.39036852904040409" green="0.39036852904040409" blue="0.39036852904040409" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4l-b6-Oq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,7 +207,7 @@
                         <viewControllerLayoutGuide type="top" id="AGZ-MX-pRB"/>
                         <viewControllerLayoutGuide type="bottom" id="HCI-FD-wJY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="p0v-V4-aPF">
+                    <view key="view" contentMode="scaleToFill" id="p0v-V4-aPF" customClass="IntroHelloRegisterViewController" customModule="CloudAlarm" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -233,15 +239,20 @@
                                     <outlet property="delegate" destination="fZH-tJ-jUw" id="dRb-SC-Q9z"/>
                                 </connections>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="We want to keep your alarms on all your devices. To do that, we need you to supply your e-mail and choose a password." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="cD0-Qd-HxS">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="We want to keep your alarms on all your devices. To do that, we need you to supply your e-mail and choose a password." textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD0-Qd-HxS">
                                 <rect key="frame" x="16" y="28" width="288" height="95"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="nZh-J7-Hfa"/>
+                                    <constraint firstAttribute="height" constant="95" id="pMc-PP-JBQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCt-X3-BJ2">
                                 <rect key="frame" x="69" y="267" width="183" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="183" id="DHy-Cs-e5l"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Let's go!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -251,17 +262,27 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.74497494058271208" green="1" blue="0.81284057442409319" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cD0-Qd-HxS" firstAttribute="leading" secondItem="p0v-V4-aPF" secondAttribute="leading" constant="16" id="FjO-rz-O9N"/>
-                            <constraint firstItem="rCt-X3-BJ2" firstAttribute="top" secondItem="rZL-PV-d8X" secondAttribute="bottom" constant="20" id="ODz-vT-hQg"/>
+                            <constraint firstItem="cD0-Qd-HxS" firstAttribute="top" secondItem="AGZ-MX-pRB" secondAttribute="bottom" constant="8" id="NQj-os-IG0"/>
+                            <constraint firstItem="rCt-X3-BJ2" firstAttribute="top" secondItem="rZL-PV-d8X" secondAttribute="bottom" constant="40" id="ODz-vT-hQg"/>
                             <constraint firstAttribute="centerX" secondItem="rZL-PV-d8X" secondAttribute="centerX" id="OV5-Kd-35S"/>
                             <constraint firstAttribute="centerX" secondItem="rCt-X3-BJ2" secondAttribute="centerX" id="dC8-Bh-p4h"/>
+                            <constraint firstAttribute="centerX" secondItem="cD0-Qd-HxS" secondAttribute="centerX" id="dPJ-YY-2eh"/>
                             <constraint firstItem="rZL-PV-d8X" firstAttribute="leading" secondItem="p0v-V4-aPF" secondAttribute="leading" id="hIM-d4-B5c"/>
                             <constraint firstAttribute="trailing" secondItem="rZL-PV-d8X" secondAttribute="trailing" id="j1w-Ha-hve"/>
-                            <constraint firstItem="rZL-PV-d8X" firstAttribute="top" secondItem="cD0-Qd-HxS" secondAttribute="bottom" constant="20" id="wDK-C0-gMM"/>
+                            <constraint firstItem="rZL-PV-d8X" firstAttribute="top" secondItem="cD0-Qd-HxS" secondAttribute="bottom" constant="16" id="wDK-C0-gMM"/>
                             <constraint firstAttribute="trailing" secondItem="cD0-Qd-HxS" secondAttribute="trailing" constant="16" id="xCX-jE-OjX"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.67330399620000003" green="0.85391361180000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.39036852900000002" green="0.39036852900000002" blue="0.39036852900000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="rZL-PV-d8X" id="iYw-1e-FN5"/>
@@ -276,7 +297,7 @@
         <scene sceneID="ObZ-eJ-EiG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXi-fI-DCg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarms" id="FC0-lW-iKp"/>
+                    <tabBarItem key="tabBarItem" title="Alarms" image="bell-7.png" id="FC0-lW-iKp"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="NVG-vu-Cdl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mmG-Zy-Grq">
@@ -555,7 +576,7 @@
             <objects>
                 <tableViewController autoresizesArchivedViewToFullSize="NO" id="oCF-EM-91N" customClass="AlarmActionsViewController" customModule="CloudAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mvd-vn-NrE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="326"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="277"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -598,7 +619,7 @@
             <objects>
                 <tableViewController id="d3K-uS-HD8" customClass="AlarmRepeatViewController" customModule="CloudAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SaS-Er-ZUG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="326"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="277"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -635,7 +656,7 @@
         <scene sceneID="Y3K-wc-nMn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nLt-C4-8Vt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="1GZ-Vy-NMe"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear-7.png" id="1GZ-Vy-NMe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nY7-hu-2cx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -652,6 +673,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell-7.png" width="30" height="30"/>
+        <image name="gear-7.png" width="30" height="30"/>
         <image name="press_smartbridge.png" width="516" height="475"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -660,7 +683,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PeB-tl-bxt"/>
+        <segue reference="Xrr-Pu-TV6"/>
         <segue reference="rni-P7-SfH"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -35,6 +35,9 @@
 		1FC9CFA31B09311500CCA93A /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CFA21B09311500CCA93A /* Hue.swift */; };
 		1FC9CFB91B093EB700CCA93A /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9CFB81B093EB700CCA93A /* REST.swift */; };
 		1FF9A0A41AF53B490029013A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9A0A31AF53B490029013A /* Notifications.swift */; };
+		712196961B0E71E400A0B3FF /* bell-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 712196951B0E71E400A0B3FF /* bell-7.png */; };
+		712196981B0E729500A0B3FF /* gear-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 712196971B0E729500A0B3FF /* gear-7.png */; };
+		7121969A1B0E76A700A0B3FF /* IntroHelloRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712196991B0E76A700A0B3FF /* IntroHelloRegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		1FC9CFB81B093EB700CCA93A /* REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		1FE0FDDD1AF5B289007A756D /* CloudAlarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudAlarm.entitlements; sourceTree = "<group>"; };
 		1FF9A0A31AF53B490029013A /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		712196951B0E71E400A0B3FF /* bell-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-7.png"; sourceTree = "<group>"; };
+		712196971B0E729500A0B3FF /* gear-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-7.png"; sourceTree = "<group>"; };
+		712196991B0E76A700A0B3FF /* IntroHelloRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroHelloRegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,7 @@
 				1F2B59311AEBF80B004AB9A2 /* AlarmActionsContainerViewController.swift */,
 				1FA8ED2E1AE14D7A0082FF4C /* Main.storyboard */,
 				1FC9CFA01B090FB900CCA93A /* SettingsViewController.swift */,
+				712196991B0E76A700A0B3FF /* IntroHelloRegisterViewController.swift */,
 				1F0616521B08AE0900DD92DA /* IntroLoginRegisterViewController.swift */,
 				1FC9CFB81B093EB700CCA93A /* REST.swift */,
 				1FC99E921B07B2C6005AFA6F /* IntroViewController.swift */,
@@ -218,8 +225,18 @@
 			isa = PBXGroup;
 			children = (
 				1FA8ED261AE14D7A0082FF4C /* Info.plist */,
+				712196941B0E71D300A0B3FF /* Images */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		712196941B0E71D300A0B3FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				712196971B0E729500A0B3FF /* gear-7.png */,
+				712196951B0E71E400A0B3FF /* bell-7.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,11 +341,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712196961B0E71E400A0B3FF /* bell-7.png in Resources */,
 				1FA8ED301AE14D7A0082FF4C /* Main.storyboard in Resources */,
 				1FA8ED351AE14D7A0082FF4C /* LaunchScreen.xib in Resources */,
 				1FC9CF9D1B090B4D00CCA93A /* alarm.caf in Resources */,
 				1FC9CF991B08FB9100CCA93A /* press_smartbridge.png in Resources */,
 				1FA8ED321AE14D7A0082FF4C /* Images.xcassets in Resources */,
+				712196981B0E729500A0B3FF /* gear-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FC9CF9B1B08FC9000CCA93A /* HueBridgeConnectionViewController.swift in Sources */,
+				7121969A1B0E76A700A0B3FF /* IntroHelloRegisterViewController.swift in Sources */,
 				1FC9CF931B08E8A100CCA93A /* DDLog.m in Sources */,
 				1FC9CF971B08E8EC00CCA93A /* HueBridgeSelectionViewController.swift in Sources */,
 				1FC9CFB91B093EB700CCA93A /* REST.swift in Sources */,
