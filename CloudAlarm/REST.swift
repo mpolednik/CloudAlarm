@@ -13,19 +13,26 @@ import CoreData
 let BASE_URL = "http://cloud-alarm-server.herokuapp.com/api"
 
 func register(username: String, password: String) -> Void {
-    Alamofire.request(Method.POST, BASE_URL + "/users", parameters: ["username": username, "password": password], encoding: .JSON).responseJSON {
-        (request, response, JSON, error) in
-        let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
-        
-        if let json = JSON as? [String: String] {
-            userDefaults!.setObject(username, forKey: "username")
-            userDefaults!.setObject(json["access_token"]!, forKey: "accessToken")
-            userDefaults!.synchronize()
+    let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+    
+    Alamofire.request(Method.POST, BASE_URL + "/users", parameters: ["username": username, "password": password], encoding: .JSON).response {
+        (request, response, data, error) in
+        userDefaults!.setObject(username, forKey: "username")
+        let json = JSON(data: (data as? NSData)!)
+        if let accessToken = json["access_token"].string {
+            userDefaults!.setObject(accessToken, forKey: "accessToken")
+        } else {
+            Alamofire.request(Method.GET, BASE_URL + "/user").authenticate(user: username, password: password).response {
+                (request, response, data, error) in
+                let json = JSON(data: (data as? NSData)!)
+                userDefaults!.setObject(json["token"].string, forKey: "accessToken")
+                userDefaults!.synchronize()
+            }
         }
     }
 }
 
-func createAlarmForCurrentUser(alarm: Alarm) -> Void {
+func createRESTAlarmForCurrentUser(alarm: Alarm) -> Void {
     let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
     let accessToken: String? = userDefaults!.valueForKey("accessToken") as! String?
     
@@ -42,8 +49,57 @@ func createAlarmForCurrentUser(alarm: Alarm) -> Void {
     }
 }
 
-func syncAlarms(controller: NSFetchedResultsController) -> Void {
-    // v prvni rade stahneme available alarmy
+func updateRESTAlarmForCurrentUser(alarm: Alarm) -> Void {
+    let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+    let accessToken: String? = userDefaults!.valueForKey("accessToken") as! String?
+    
+    // zformatujeme string z NSdate
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd H:mm:ss Z EEEEE"
+    
+    if let accessToken = accessToken {
+        var url = BASE_URL + "/alarms/\(alarm.uuid)"
+        Alamofire.request(Method.GET, url, parameters: ["access_token": accessToken]).response {
+            (request, response, data, error) in
+            let json = JSON(data: (data as? NSData)!)
+            if json["data"] != JSON.nullJSON {
+                if formatter.dateFromString(json["data"]["lastChanged"].string!)!.timeIntervalSinceDate(alarm.last_changed) > 0 {
+                    alarm.last_changed = formatter.dateFromString(json["data"]["lastChanged"].string!)!
+                    alarm.target = formatter.dateFromString(json["data"]["target"].string!)!
+                    alarm.removed = json["data"]["removed"].bool!
+                    alarm.enabled = json["data"]["enabled"].bool!
+                    alarm.label = json["data"]["title"].string!
+                } else {
+                    url = BASE_URL + "/alarms/\(alarm.uuid)?access_token=\(accessToken)"
+                    Alamofire.request(Method.PUT, url, parameters: ["uuid": alarm.uuid, "title": alarm.label, "lastChanged": formatter.stringFromDate(alarm.last_changed), "enabled": alarm.enabled, "target": formatter.stringFromDate(alarm.target), "repeat": Array(alarm.repeat)], encoding: .JSON).responseJSON {
+                        (request, response, JSON, error) in
+                        // handle in production, leave now
+                    }
+                }
+            } else {
+                createRESTAlarmForCurrentUser(alarm)
+            }
+        }
+    }
+}
+
+func deleteRESTAlarmForCurrentUser(alarm: Alarm) {
+    let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+    let accessToken: String? = userDefaults!.valueForKey("accessToken") as! String?
+    
+    // zformatujeme string z NSdate
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd H:mm:ss Z EEEEE"
+    
+    if let accessToken = accessToken {
+        var url = BASE_URL + "/alarms/\(alarm.uuid)"
+        Alamofire.request(Method.DELETE, url, parameters: ["access_token": accessToken]).response {
+            (request, response, data, error) in
+        }
+    }
+}
+
+func syncAlarms(controller: NSFetchedResultsController, moc: NSManagedObjectContext) -> Void {
     let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
     let accessToken: String? = userDefaults!.valueForKey("accessToken") as! String?
     let knownAlarms = (controller.sections![0] as! NSFetchedResultsSectionInfo).objects
@@ -52,11 +108,31 @@ func syncAlarms(controller: NSFetchedResultsController) -> Void {
         knownAlarmsDict[alarm.uuid] = alarm as? Alarm
     }
     
+    // zformatujeme string z NSdate
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd H:mm:ss Z EEEEE"
+    
     if let accessToken = accessToken {
         Alamofire.request(Method.GET, BASE_URL + "/alarms", parameters: ["access_token": accessToken]).response {
             (request, response, data, error) in
             let json = JSON(data: (data as? NSData)!)
-            println(json["data"][0]["enabled"])
+            for alarm in json["data"] {
+                if let knownAlarm = knownAlarmsDict.indexForKey(alarm.1["uuid"].string!) {
+                    updateRESTAlarmForCurrentUser(knownAlarmsDict[alarm.1["uuid"].string!]!)
+                } else {
+                    let newAlarm: Alarm = NSEntityDescription.insertNewObjectForEntityForName("Alarm", inManagedObjectContext: moc) as! Alarm
+                    newAlarm.last_changed = formatter.dateFromString(alarm.1["lastChanged"].string!)!
+                    newAlarm.target = formatter.dateFromString(alarm.1["target"].string!)!
+                    newAlarm.removed = alarm.1["removed"].bool!
+                    newAlarm.enabled = alarm.1["enabled"].bool!
+                    newAlarm.label = alarm.1["title"].string!
+                    newAlarm.uuid = alarm.1["uuid"].string!
+                }
+            }
         }
+    }
+    
+    for alarm in knownAlarms {
+        updateRESTAlarmForCurrentUser(alarm as! Alarm)
     }
 }

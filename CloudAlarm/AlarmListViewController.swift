@@ -17,6 +17,7 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
             alarm.enabled = true
             updateNotificationsForAlarm(alarm)
             alarm.last_changed = NSDate()
+            updateRESTAlarmForCurrentUser(alarm)
         }
         self.moc.save(nil)
         self.tableView.reloadData()
@@ -78,7 +79,7 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
             }
         }
         
-        syncAlarms(self.controller)
+        syncAlarms(self.controller, self.moc)
         
         self.tableView.reloadData()
         self.moc.save(nil)
@@ -122,6 +123,7 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
         let alarm: Alarm = self.controller.objectAtIndexPath(self.tableView.indexPathForCell(cell)!) as! Alarm
         alarm.enabled = cell.uiSwitch.on
         updateNotificationsForAlarm(alarm)
+        updateRESTAlarmForCurrentUser(alarm)
         self.moc.save(nil)
     }
     
@@ -132,8 +134,9 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             let alarm: Alarm = self.controller.objectAtIndexPath(indexPath) as! Alarm
+            alarm.removed = true
             deleteNotificationsForAlarm(alarm)
-            self.moc.deleteObject(alarm)
+            deleteRESTAlarmForCurrentUser(alarm)
             self.moc.save(nil)
         }
     }
