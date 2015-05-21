@@ -127,12 +127,13 @@ func syncAlarms(controller: NSFetchedResultsController, moc: NSManagedObjectCont
                     newAlarm.enabled = alarm.1["enabled"].bool!
                     newAlarm.label = alarm.1["title"].string!
                     newAlarm.uuid = alarm.1["uuid"].string!
+                    updateNotificationsForAlarm(newAlarm)
                 }
             }
+            
+            for alarm in knownAlarms {
+                updateRESTAlarmForCurrentUser(alarm as! Alarm)
+            }
         }
-    }
-    
-    for alarm in knownAlarms {
-        updateRESTAlarmForCurrentUser(alarm as! Alarm)
     }
 }
