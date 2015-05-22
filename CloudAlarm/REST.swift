@@ -42,9 +42,11 @@ func createRESTAlarmForCurrentUser(alarm: Alarm) -> Void {
     
     if let accessToken = accessToken {
         let url = BASE_URL + "/alarms?access_token=\(accessToken)"
-        Alamofire.request(Method.POST, url, parameters: ["uuid": alarm.uuid, "title": alarm.label, "lastChanged": formatter.stringFromDate(alarm.last_changed), "enabled": alarm.enabled, "target": formatter.stringFromDate(alarm.target), "repeat": Array(alarm.repeat)], encoding: .JSON).responseJSON {
-            (request, response, JSON, error) in
-            // handle in production, leave now
+        if let lastChanged = alarm.last_changed {
+            Alamofire.request(Method.POST, url, parameters: ["uuid": alarm.uuid, "title": alarm.label, "lastChanged": formatter.stringFromDate(lastChanged), "enabled": alarm.enabled, "target": formatter.stringFromDate(alarm.target), "repeat": Array(alarm.repeat)], encoding: .JSON).responseJSON {
+                (request, response, JSON, error) in
+                // handle in production, leave now
+            }
         }
     }
 }
@@ -63,15 +65,19 @@ func updateRESTAlarmForCurrentUser(alarm: Alarm) -> Void {
             (request, response, data, error) in
             let json = JSON(data: (data as? NSData)!)
             if json["data"] != JSON.nullJSON {
-                if formatter.dateFromString(json["data"]["lastChanged"].string!)!.timeIntervalSinceDate(alarm.last_changed) > 0 {
+                if formatter.dateFromString(json["data"]["lastChanged"].string!)!.timeIntervalSinceDate(alarm.last_changed!) > 0 {
                     alarm.last_changed = formatter.dateFromString(json["data"]["lastChanged"].string!)!
                     alarm.target = formatter.dateFromString(json["data"]["target"].string!)!
-                    alarm.removed = json["data"]["removed"].bool!
+                    if let removed = json["data"]["removed"].bool {
+                        alarm.removed = removed
+                    } else {
+                        alarm.removed = false
+                    }
                     alarm.enabled = json["data"]["enabled"].bool!
                     alarm.label = json["data"]["title"].string!
                 } else {
                     url = BASE_URL + "/alarms/\(alarm.uuid)?access_token=\(accessToken)"
-                    Alamofire.request(Method.PUT, url, parameters: ["uuid": alarm.uuid, "title": alarm.label, "lastChanged": formatter.stringFromDate(alarm.last_changed), "enabled": alarm.enabled, "target": formatter.stringFromDate(alarm.target), "repeat": Array(alarm.repeat)], encoding: .JSON).responseJSON {
+                    Alamofire.request(Method.PUT, url, parameters: ["uuid": alarm.uuid, "title": alarm.label, "lastChanged": formatter.stringFromDate(alarm.last_changed!), "enabled": alarm.enabled, "target": formatter.stringFromDate(alarm.target), "repeat": Array(alarm.repeat)], encoding: .JSON).responseJSON {
                         (request, response, JSON, error) in
                         // handle in production, leave now
                     }
@@ -123,7 +129,11 @@ func syncAlarms(controller: NSFetchedResultsController, moc: NSManagedObjectCont
                     let newAlarm: Alarm = NSEntityDescription.insertNewObjectForEntityForName("Alarm", inManagedObjectContext: moc) as! Alarm
                     newAlarm.last_changed = formatter.dateFromString(alarm.1["lastChanged"].string!)!
                     newAlarm.target = formatter.dateFromString(alarm.1["target"].string!)!
-                    newAlarm.removed = alarm.1["removed"].bool!
+                    if let removed = alarm.1["removed"].bool {
+                        newAlarm.removed = removed
+                    } else {
+                        newAlarm.removed = false
+                    }
                     newAlarm.enabled = alarm.1["enabled"].bool!
                     newAlarm.label = alarm.1["title"].string!
                     newAlarm.uuid = alarm.1["uuid"].string!

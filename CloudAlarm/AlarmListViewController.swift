@@ -15,8 +15,8 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
         let source: AlarmAddEditViewController = segue.sourceViewController as! AlarmAddEditViewController
         if let alarm = source.item {
             alarm.enabled = true
-            updateNotificationsForAlarm(alarm)
             alarm.last_changed = NSDate()
+            updateNotificationsForAlarm(alarm)
             updateRESTAlarmForCurrentUser(alarm)
         }
         self.moc.save(nil)
@@ -84,6 +84,7 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
         self.tableView.reloadData()
         self.moc.save(nil)
         self.refreshControl?.endRefreshing()
+        self.controller.performFetch(nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

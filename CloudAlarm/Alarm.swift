@@ -17,7 +17,7 @@ class Alarm: NSManagedObject {
     @NSManaged var target: NSDate
     @NSManaged var uuid: String
     @NSManaged var removed: Bool
-    @NSManaged var last_changed: NSDate
+    @NSManaged var last_changed: NSDate?
 
     func initDefaults() {
         self.enabled = true
