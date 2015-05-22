@@ -14,10 +14,10 @@ let BASE_URL = "http://cloud-alarm-server.herokuapp.com/api"
 
 func register(username: String, password: String) -> Void {
     let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
+    userDefaults!.setObject(username, forKey: "username")
     
     Alamofire.request(Method.POST, BASE_URL + "/users", parameters: ["username": username, "password": password], encoding: .JSON).response {
         (request, response, data, error) in
-        userDefaults!.setObject(username, forKey: "username")
         let json = JSON(data: (data as? NSData)!)
         if let accessToken = json["access_token"].string {
             userDefaults!.setObject(accessToken, forKey: "accessToken")

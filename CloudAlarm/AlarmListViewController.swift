@@ -54,8 +54,8 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
     override func viewDidAppear(animated: Bool) {
         let userDefaults = NSUserDefaults(suiteName: "group.cz.muni.fi")
         
-        let accessToken: String? = userDefaults!.valueForKey("accessToken") as! String?
-        if accessToken == nil {
+        let username: String? = userDefaults!.valueForKey("username") as! String?
+        if username == nil {
             self.performSegueWithIdentifier("showIntro", sender: self)
         }
     }
@@ -83,6 +83,7 @@ class AlarmListViewController: UITableViewController, UITableViewDataSource, UIT
         
         self.tableView.reloadData()
         self.moc.save(nil)
+        self.refreshControl?.endRefreshing()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
